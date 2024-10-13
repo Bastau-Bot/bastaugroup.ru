@@ -1,0 +1,372 @@
+import telebot
+from telebot import types
+
+
+bot = telebot.TeleBot('6245253315:AAEEp1TWAFtEcAM6EG3j__rM9zwJFw81V-U')
+
+
+@bot.message_handler(commands = ['baylanis'])
+def baylanis(message):
+    markup = types.InlineKeyboardMarkup()
+    btn_my_site = types.InlineKeyboardButton(text='БІЗБЕН БАЙЛАНЫС!', url='https://wa.me/77076358152?text=Bastau%20')
+    markup.add(btn_my_site)
+    bot.send_message(message.chat.id, "Bastau ADMIN", reply_markup=markup)
+
+@bot.message_handler(commands = ['info'])
+def info(message):
+    markup = types.InlineKeyboardMarkup()
+    btn_my_site = types.InlineKeyboardButton(text='ИНФОРМАЦИЯ', url='http://bastau.b77186vv.beget.tech/%D0%BE%20%D0%BD%D0%B0%D1%81')
+    markup.add(btn_my_site)
+    bot.send_message(message.chat.id,"БІЗ ТУРАЛЫ ", reply_markup=markup)
+
+@bot.message_handler(commands = ['site'])
+def site(message):
+    markup = types.InlineKeyboardMarkup()
+    btn_my_site = types.InlineKeyboardButton(text='BASTAU SITE', url='http://bastau.b77186vv.beget.tech/')
+    markup.add(btn_my_site)
+    bot.send_message(message.chat.id,"БІЗДІҢ САЙТ", reply_markup=markup)
+    mess1 = f'Сізге ЕСКЕРТУ! БІЗДІҢ САЙТ ӘЗІРШЕ МОБИЛЬДІ ҚОСЫМШАЛАРҒА АРНАЛМАҒАН. Дәлірек айтсақ, bastau site мобильді қосымшалар үшін әзірше дайын емес. '
+    bot.send_message(message.chat.id, mess1)
+
+@bot.message_handler(commands = ['game'])
+def game(message):
+    markup = types.InlineKeyboardMarkup(r)
+    btn_my_site1 = types.InlineKeyboardButton(text='Karate Kido', url='https://prizes.gamee.com/game-bot/9lEE0Oh-6bd828bf27dd69b55496eb018b94f7cf176c0ea9#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DBvLxbOphrzj7vWYbOIYFaQGKyqDYcBmRZNXM4jIMiYz8_VMOnxAu_GisTgKFPP5j')
+    markup.add(btn_my_site1)
+    btn_my_site2 = types.InlineKeyboardButton(text='Space Traveler', url='https://prizes.gamee.com/game-bot/ibBTDViUP-3d041dadbcdc9ff28b5cddcb3df346b251089947#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DlMpHdVqmH685DVIqNz43BgUARvdMdFrlkz6Bi63eZFb2Ul2ODdY40h7gM7kA47fz')
+    markup.add(btn_my_site2)
+    btn_my_site3 = types.InlineKeyboardButton(text='2048', url='https://prizes.gamee.com/game-bot/qube2048-0146c5ec673df45b788d2a298a23857c8815b624#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DiKt-FaUIEaTKWzmkMd_Ew1_hQ6ohrLKO31z5rX6wxsvDgvPRa_tfwtpbss3rbMTt')
+    markup.add(btn_my_site3)
+    btn_my_site4 = types.InlineKeyboardButton(text='Neon Blaster 2', url='https://prizes.gamee.com/game-bot/neonblast2-1c8bd195946ea4a9a76f44295ec8affe53f0b135#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DoHrt7vUUGeMa5UtdzTW2BqWalbQwCy3M2L4_qLPEmu-NkOXo7JTojgKstns56PHk')
+    markup.add(btn_my_site4)
+    btn_my_site5 = types.InlineKeyboardButton(text='Moto', url='https://prizes.gamee.com/game-bot/motofx2-1584f63cf81f9dbc24e9e0dacec30cf201f90547#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DgE2XAUPrKNk6HiCJgbQKNzqlfh0V_YI90HeF05VtQMnT7_3VIDrMm4jrtynF9gpo')
+    markup.add(btn_my_site5)
+    btn_my_site6 = types.InlineKeyboardButton(text='F1 Racer', url='https://prizes.gamee.com/game-bot/Q8PWil-cec6d97180547f62eb6e8bddf1eaa9c91b3d00a1#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3D8bls1pkgwPSdTybUsZI24-3loSyRbaSrylj_xuxWe1C4EstGHsELO86XSOnoP32u')
+    markup.add(btn_my_site6)
+    bot.send_message(message.chat.id, "Bastau Games🎮", reply_markup=markup)
+
+
+
+
+
+
+
+@bot.message_handler(commands=["start"])
+def start(message):
+    mess = f'Салем,{message.from_user.first_name} егер бір нәрсе түсініксіз болса - MENU-ға кіріп /komek басыңыз, ал егер бәрі түсінікті болса /tandau функциясын енгізіңіз!'
+    bot.send_message(message.chat.id, mess)
+
+
+
+@bot.message_handler(content_types=["text"])
+def get_user_text(message):
+    if message.text == "😃":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        keyboard2 = types.KeyboardButton('ℳАТЕМАТИКА')
+        keyboard3 = types.KeyboardButton('∳ИЗИКА')
+        markup.add(keyboard2, keyboard3)
+        mess = f'Жақсы,{message.from_user.first_name} онда видео сабақтар көруге қалай қарайсыз, қызық болса керекті пәнді таңдаңыз😊 '
+        bot.send_message(message.chat.id, mess, reply_markup=markup, parse_mode='html')
+    if message.text == "ℳАТЕМАТИКА":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        keyboard1 = types.KeyboardButton('1️⃣')
+        keyboard2 = types.KeyboardButton('2️⃣')
+        keyboard3 = types.KeyboardButton('3️⃣')
+        keyboard4 = types.KeyboardButton('4️⃣')
+        keyboard5 = types.KeyboardButton('')
+        keyboard6 = types.KeyboardButton('')
+        markup.add(keyboard1, keyboard2, keyboard3, keyboard4, keyboard5, keyboard6)
+        bot.send_message(message.chat.id, "Видео сабақ тақырыбын таңдаңыз және сол тандаған тақырыбының санын чатқа енгізіңіз! ", reply_markup=markup, parse_mode='html')
+        photo = open(r"TAQYRYP.png", 'rb')
+        bot.send_photo(message.chat.id, photo=photo)
+
+    if message.text == "/komek":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        keyboard2 = types.KeyboardButton('😃')
+        markup.add(keyboard2)
+        photo = open(r"Снимок экрана (14).png", 'rb')
+        bot.send_photo(message.chat.id, photo=photo)
+        bot.send_message(message.chat.id, "ЕГЕР СІЗДЕ БАСҚА ДА СҰРАҚТАР БОЛСА, БІЗБЕН БАЙЛАНЫСЫҢЫЗ!", reply_markup=markup, parse_mode='html')
+    if message.text == "/formula":
+        photo = open(r"formula.png", 'rb')
+        bot.send_photo(message.chat.id, photo=photo)
+
+
+
+    if message.text == "1️⃣":
+        video = open(r"1 taqyryp .mp4", 'rb')
+        bot.send_video(message.chat.id, video=video)
+    if message.text == "2️⃣":
+        video = open(r"2 taqyryp.mp4", 'rb')
+        bot.send_video(message.chat.id, video=video)
+    if message.text == "3️⃣":
+        video = open(r"3 takyryp.mp4", 'rb')
+        bot.send_video(message.chat.id, video=video)
+    if message.text == "4️⃣":
+        video = open(r"4 taqyryp.mp4", 'rb')
+        bot.send_video(message.chat.id, video=video)
+
+    if message.text =="МАТЕМАТИКА🧠":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        keyboard1 = types.KeyboardButton('💭')
+        keyboard2 = types.KeyboardButton('⚙️')
+        keyboard3 = types.KeyboardButton('🔰')
+        keyboard4 = types.KeyboardButton('🌍')
+        keyboard5 = types.KeyboardButton('✅')
+        markup.add(keyboard1, keyboard2, keyboard3, keyboard4, keyboard5)
+        bot.send_message(message.chat.id, "Ендеше тест тақырыптарына көшейік   1-💭, 2-⚙️, 3-🔰, 4-🌍 ",reply_markup=markup, parse_mode='html')
+        photo = open(r"TAQYRYP.png", 'rb')
+        bot.send_photo(message.chat.id, photo=photo)
+
+
+
+    if message.text == "💭":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        item1 = types.InlineKeyboardButton('1.1', callback_data='button1')
+        item2 = types.InlineKeyboardButton('1.2', callback_data='button2')
+        markup.add(item1, item2)
+        bot.send_message(message.chat.id, "Есеп таңдаңыз!", reply_markup=markup)
+
+
+    if message.text == "Жауабы1.1":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)-1; -2,5; 5; 5; 2,5; 1', callback_data='button3')
+        answer2 = types.InlineKeyboardButton('A)-11; -2,5; -5; 5; 2,5; 1', callback_data='button4')
+        answer3 = types.InlineKeyboardButton('I)-1; -2,5; 5; -5; 2,5; 1', callback_data='button5')
+        answer4 = types.InlineKeyboardButton('D)-1; -2,5; -5; 5; 2,5; 1', callback_data='button6')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+        item1 = types.InlineKeyboardButton('Жауабы1.1', callback_data='answer1.1')
+        markup.add(item1)
+
+    if message.text == "Жауабы1.2":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)-1', callback_data='button7')
+        answer2 = types.InlineKeyboardButton('A)1', callback_data='button8')
+        answer3 = types.InlineKeyboardButton('I)3', callback_data='button9')
+        answer4 = types.InlineKeyboardButton('D)дұрыс жауап жоқ', callback_data='button10')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+
+    if message.text == "⚙️":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        item1 = types.InlineKeyboardButton('2.1', callback_data='button11')
+        item2 = types.InlineKeyboardButton('2.2', callback_data='button12')
+        markup.add(item1, item2)
+        bot.send_message(message.chat.id, "Есеп таңдаңыз!", reply_markup=markup)
+
+    if message.text == "Жауабы2.1":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)x^2-2xy+y^2', callback_data='button13')
+        answer2 = types.InlineKeyboardButton('A)x^2-xy-y^2', callback_data='button14')
+        answer3 = types.InlineKeyboardButton('I)x^2-2xy-y^2', callback_data='button15')
+        answer4 = types.InlineKeyboardButton('D)x^2+2xy+y^2', callback_data='button16')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+    if message.text == "Жауабы2.2":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)75', callback_data='button17')
+        answer2 = types.InlineKeyboardButton('A)70', callback_data='button18')
+        answer3 = types.InlineKeyboardButton('I)125', callback_data='button19')
+        answer4 = types.InlineKeyboardButton('D)25', callback_data='button20')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+
+    if message.text == "🔰":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        item1 = types.InlineKeyboardButton('3.1', callback_data='button21')
+        item2 = types.InlineKeyboardButton('3.2', callback_data='button22')
+        markup.add(item1, item2)
+        bot.send_message(message.chat.id, "Есеп таңдаңыз!", reply_markup=markup)
+
+    if message.text == "Жауабы3.1":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)x^2-12xy+xy^2', callback_data='button23')
+        answer2 = types.InlineKeyboardButton('A)x^2+12x+y^2', callback_data='button24')
+        answer3 = types.InlineKeyboardButton('I)x^2+12x+36', callback_data='button25')
+        answer4 = types.InlineKeyboardButton('D)x+2xy+y', callback_data='button26')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+    if message.text == "Жауабы3.2":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)x^2-14xy+49', callback_data='button27')
+        answer2 = types.InlineKeyboardButton('A)x^2+14x+y^2', callback_data='button28')
+        answer3 = types.InlineKeyboardButton('I)x^2-14y^2-y^2', callback_data='button29')
+        answer4 = types.InlineKeyboardButton('D)x+14xy+y', callback_data='button30')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+
+    if message.text == "🌍":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        item1 = types.InlineKeyboardButton('4.1', callback_data='button31')
+        item2 = types.InlineKeyboardButton('4.2', callback_data='button32')
+        markup.add(item1, item2)
+        bot.send_message(message.chat.id, "Есеп таңдаңыз!", reply_markup=markup)
+    if message.text == "Жауабы4.1":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)a^3-15+xy^2', callback_data='button33')
+        answer2 = types.InlineKeyboardButton('A)a^3+15a^2+75a^3-125', callback_data='button34')
+        answer3 = types.InlineKeyboardButton('I)a^3+5a+75a^2-125', callback_data='button35')
+        answer4 = types.InlineKeyboardButton('D)a^3+15a^2+75a-125', callback_data='button36')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+    if message.text == "Жауабы4.2":
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        answer1 = types.InlineKeyboardButton('S)a^3+6a+12a-8', callback_data='button37')
+        answer2 = types.InlineKeyboardButton('A)a^3+6a^2+12a+8', callback_data='button38')
+        answer3 = types.InlineKeyboardButton('I)a^3+a^2-12a-8', callback_data='button39')
+        answer4 = types.InlineKeyboardButton('D)a^2-6a^2+12a+8', callback_data='button40')
+        markup.add(answer1, answer2, answer3, answer4)
+        bot.send_message(message.chat.id, "Қай жауап дұрыс?", reply_markup=markup)
+
+    if message.text == "/tandau":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        keyboard1 = types.KeyboardButton('МАТЕМАТИКА🧠')
+        keyboard2 = types.KeyboardButton('ФИЗИКА👀')
+        markup.add(keyboard1, keyboard2)
+        bot.send_message(message.chat.id, "Өзіңізге керекті пәнді таңдаңыз",reply_markup=markup, parse_mode='html')
+
+
+
+
+    @bot.callback_query_handler(func=lambda call: True)
+    def callback(call, message=None):
+        if call.data == "button1":
+            photo = open(r"1.1.png", 'rb')
+            bot.send_photo(call.message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы1.1 деп жазыңыз')
+        if call.data == "button2":
+            photo = open(r"1.2.png", 'rb')
+            bot.send_photo(call.message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы1.2 деп жазыңыз')
+        if call.data == "button3":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!",
+                             parse_mode='html')
+        if call.data == "button5":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!",
+                             parse_mode='html')
+        if call.data == "button6":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button7":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!",
+                             parse_mode='html')
+        if call.data == "button8":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button9":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button10":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button11":
+            photo = open(r"Снимок экрана (11).png", 'rb')
+            bot.send_photo(call.message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы2.1 деп жазыңыз')
+        if call.data == "button12":
+            photo = open(r"Снимок экрана (15).png", 'rb')
+            bot.send_photo(message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы2.2 деп жазыңыз')
+        if call.data == "button13":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button14":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button15":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button16":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button17":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button18":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button19":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button20":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button21":
+            photo = open(r"Снимок экрана (16).png", 'rb')
+            bot.send_photo(message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы3.1 деп жазыңыз')
+        if call.data == "button22":
+            photo = open(r"Снимок экрана (17).png", 'rb')
+            bot.send_photo(message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы3.2 деп жазыңыз')
+        if call.data == "button23":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button24":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button25":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button26":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button27":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button28":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button29":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button30":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button31":
+            photo = open(r"Снимок экрана (18).png", 'rb')
+            bot.send_photo(message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы4.1 деп жазыңыз')
+        if call.data == "button32":
+            photo = open(r"Снимок экрана (19).png", 'rb')
+            bot.send_photo(message.chat.id, photo=photo)
+            bot.send_message(call.message.chat.id, 'Жауабын көріп белгілегіңіз келсе Жауабы4.2 деп жазыңыз')
+        if call.data == "button33":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button34":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button35":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button36":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button37":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button38":
+            bot.send_message(call.message.chat.id, '👍🏻')
+            bot.send_message(call.message.chat.id, "Өте жақсы, жарайсыз келесі есептерді шығара беріңіз",
+                             parse_mode='html')
+        if call.data == "button39":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+        if call.data == "button40":
+            bot.send_message(call.message.chat.id, '🙅🏻‍♂')
+            bot.send_message(call.message.chat.id, "ӨКІНІШКЕ ОРАЙ СІЗ ЖАУАП БЕРЕ АЛМАДЫҢЫЗ ОЙЛАНЫҢЫЗ!")
+
+
+bot.polling(none_stop=True)
